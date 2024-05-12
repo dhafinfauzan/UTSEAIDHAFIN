@@ -1,0 +1,14 @@
+services:
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+  publisher:
+    build: ./publisher
+    ports:
+      - "3000:3000"
+  subscriber:
+    build: ./subscriber
+    ports:
+      - "4000:4000"
